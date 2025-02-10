@@ -1,30 +1,33 @@
-//complete this code
 class Rectangle {
 	private width: number;
 	private height: number;
-	constructor(width: number, height: number){
+
+	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
 	}
-	getWidth(): number{
+
+	getWidth(): number {
 		return this.width;
 	}
 
-	getHeight(): number{
+	getHeight(): number {
 		return this.height;
 	}
 
-	getArea(): number{
+	getArea(): number {
 		return this.width * this.height;
 	}
 }
 
 class Square extends Rectangle {
-	constructor(side: number){
+	constructor(side: number) {
 		super(side, side);
 	}
-	getPerimeter(): number{
-		return 4 * this.getWidth();
+
+	getPerimeter(): number {
+		// Fixed: Correctly call the getter method
+		return 4 * this.getWidth(); 
 	}
 }
 
