@@ -1,17 +1,17 @@
 class Rectangle {
-	private width: number;
-	private height: number;
+	protected width: number;
+	protected height: number;
 
 	constructor(width: number, height: number) {
 		this.width = width;
 		this.height = height;
 	}
 
-	getWidth(): number {
+	get Width(): number {
 		return this.width;
 	}
 
-	getHeight(): number {
+	get Height(): number {
 		return this.height;
 	}
 
@@ -27,7 +27,7 @@ class Square extends Rectangle {
 
 	getPerimeter(): number {
 		// Fixed: Correctly call the getter method
-		return 4 * this.getWidth(); 
+		return 4 * this.Width; 
 	}
 }
 
