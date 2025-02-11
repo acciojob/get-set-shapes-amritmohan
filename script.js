@@ -1,36 +1,40 @@
+//complete this code
 class Rectangle {
-	constructor(protected width: number, protected height: number) {
-		if (width <= 0 || height <= 0) {
-			throw new Error("Width and height must be positive integers.");
-		}
-	}
+    constructor(width, height) {
+        if (width <= 0 || height <= 0) {
+            throw new Error("width and height must be positive integers.");
+        }
+        this._width = width;
+        this._height = height;
+    }
 
-	getWidth(): number {
-		return this.width;
-	}
+    get width() {
+        return this._width;
+    }
 
-	getHeight(): number {
-		return this.height;
-	}
+    get height() {
+        return this._height;
+    }
 
-	getArea(): number {
-		return this.width * this.height;
-	}
+    getArea() {
+        return this._width * this._height;
+    }
 }
 
 class Square extends Rectangle {
-	constructor(side: number) {
-		super(side, side);
-		if (side <= 0) {
-			throw new Error("Side length must be a positive integer.");
-		}
-	}
+    constructor(side) {
+        if (side <= 0) {
+            throw new Error("Side must be a positive integer.");
+        }
+        super(side, side); 
+    }
 
-	getPerimeter(): number {
-		return 4 * this.width;
-	}
+    getPerimeter() {
+        return 4 * this._width;
+    }
 }
 
+
 // Do not change the code below this line
-(window as any).Rectangle = Rectangle;
-(window as any).Square = Square;
+window.Rectangle = Rectangle;
+window.Square = Square;
